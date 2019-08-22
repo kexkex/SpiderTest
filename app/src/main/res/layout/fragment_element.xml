@@ -15,7 +15,7 @@
     <TextView
             android:text="TextView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/tv_img_description"/>
+            android:layout_height="wrap_content" android:id="@+id/tv_img_description" android:maxLines="3"/>
     <TextView
             android:text="TextView"
             android:layout_width="match_parent"

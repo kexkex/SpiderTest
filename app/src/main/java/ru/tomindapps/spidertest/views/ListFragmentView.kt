@@ -5,5 +5,4 @@ import ru.tomindapps.spidertest.models.ImageModel
 
 interface ListFragmentView : MvpView{
     fun loadImages(images: List<ImageModel>)
-    fun openElementFragment(image: ImageModel)
 }

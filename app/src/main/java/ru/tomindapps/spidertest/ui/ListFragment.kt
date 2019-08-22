@@ -2,11 +2,10 @@ package ru.tomindapps.spidertest.ui
 
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
-import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AbsListView
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
@@ -65,17 +64,18 @@ class ListFragment : MvpAppCompatFragment(), ListFragmentView, ImagesAdapter.MyA
         ia.setupImages(images as ArrayList<ImageModel>)
     }
 
-
-    override fun openElementFragment(image: ImageModel) {
-        val fragment = ElementFragment.newInstance(image.link,image.galleryId)
+    override fun onRowClicked(image: ImageModel) {
+        Log.d("Main","click")
+        val fragment = ElementFragment.newInstance(
+            image.link,
+            image.galleryId,
+            image.title,
+            image.description,
+            image.datetime)
         activity!!.supportFragmentManager.beginTransaction()
-            .replace(R.id.container, fragment)
+            .replace(R.id.container,fragment)
             .addToBackStack(null)
             .commit()
-    }
-
-    override fun onRowClicked(image: ImageModel) {
-        mListFragmentPresenter.elementClick(image)
     }
 
 }

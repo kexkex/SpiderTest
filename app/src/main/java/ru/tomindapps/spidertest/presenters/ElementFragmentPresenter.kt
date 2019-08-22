@@ -7,8 +7,6 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import ru.tomindapps.spidertest.models.CommentModel
 import ru.tomindapps.spidertest.models.CommentRepo
-import ru.tomindapps.spidertest.models.ImageModel
-import ru.tomindapps.spidertest.models.ImageRepo
 import ru.tomindapps.spidertest.views.ElementFragmentView
 
 @InjectViewState
@@ -33,7 +31,7 @@ class ElementFragmentPresenter : MvpPresenter<ElementFragmentView>(){
         viewState.loadComments(comments!!)
     }
 
-    fun loadImage(imageLink: String){
-        viewState.loadImage(imageLink)
+    fun loadImage(imageLink: String, imageTitle: String, imageDescription: String, imageCreated: Long){
+        viewState.loadImage(imageLink, imageTitle, imageDescription, imageCreated)
     }
 }

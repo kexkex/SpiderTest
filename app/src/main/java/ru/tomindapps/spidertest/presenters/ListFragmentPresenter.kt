@@ -5,7 +5,6 @@ import com.arellomobile.mvp.MvpPresenter
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
-import ru.tomindapps.spidertest.R
 import ru.tomindapps.spidertest.models.ImageModel
 import ru.tomindapps.spidertest.models.ImageRepo
 import ru.tomindapps.spidertest.views.ListFragmentView
@@ -42,7 +41,4 @@ class ListFragmentPresenter : MvpPresenter<ListFragmentView>(){
         viewState.loadImages(images!!)
     }
 
-    fun elementClick(image: ImageModel){
-        viewState.openElementFragment(image)
-    }
 }
